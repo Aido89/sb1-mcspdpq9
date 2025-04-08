@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Game Of Squids';
+  src: url('https://fonts.cdnfonts.com/s/55334/GameOfSquids-1GMEV.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #000;
+  color: #fff;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-squid {
+  font-family: 'Game Of Squids', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ec4899;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #db2777;
+}
+
+/* Mobile optimizations */
+input, button, select, textarea {
+  font-size: 16px; /* Prevents iOS zoom on focus */
+}
+
+/* Animation for mobile menu */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-fadeOut {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+/* Squid Game shapes animations */
+@keyframes scaleIn {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Swiper customization */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: rgba(236, 72, 153, 0.3);
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px !important;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(236, 72, 153, 0.5);
+}
+
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: #fff !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background-color: #ec4899 !important;
+}
+
+/* Transition utilities */
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 20px !important;
+  }
+}
+
+/* Fix for iOS input styling */
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
